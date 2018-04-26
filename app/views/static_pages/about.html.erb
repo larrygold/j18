@@ -1,0 +1,27 @@
+<h1>A propos</h1>
+
+
+<% if @who == nil %>
+
+<p>
+<form action="<%= about_path(who: 'me') %>">
+<button type="submit" class="btn btn-primary">A propos de Moi</button>
+</form>
+</p>
+
+<p>
+<form action="<%= about_path(who: 'our_team') %>">
+<button type="submit" class="btn btn-success">A propos de mon Equipe</button>
+</form>
+</p>
+
+<% elsif @who == "me" %>
+<p>Voici ma biographie !</p>
+
+<% elsif @who == "our_team" %>
+<p>Voici une présentation de mon groupe !</p>
+
+<% else %>
+<p>Qui es-tu ?</p>
+
+<% end %>

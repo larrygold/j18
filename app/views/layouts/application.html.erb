@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>#Mates - Vivez votre passion, ensemble !</title>
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+    <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+  </head>
+
+  <body>
+
+    <nav class="navbar navbar-expand-lg navbar-dark" style="background-color: #00815F">
+      <a class="navbar-brand" href="#">#Mates</a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarColor02" aria-controls="navbarColor02" aria-expanded="true" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div class="navbar-collapse collapse show" id="navbarColor02" style="">
+        <ul class="navbar-nav mr-auto">
+          <li class="nav-item <% if current_page?('/') %>active<% end %>">
+            <a class="nav-link" href="<%= root_path %>">Accueil <span class="sr-only">(current)</span></a>
+          </li>
+          <li class="nav-item <% if current_page?(contact_path) %>active<% end %>">
+            <a class="nav-link" href="<%= contact_path %>">Contact</a>
+          </li>
+          <li class="nav-item <% if current_page?(about_path) %>active<% end %>">
+            <a class="nav-link" href="<%= about_path %>">A propos</a>
+          </li>
+        </ul>
+        <form class="form-inline">
+          <input class="form-control mr-sm-2" placeholder="Quel est votre hobby ?" aria-label="Rechercher" type="search">
+          <button class="btn btn-outline-light my-2 my-sm-0" type="submit">Go !</button>
+        </form>
+      </div>
+    </nav>
+
+    <%= yield %>
+  </body>
+</html>
